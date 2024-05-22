@@ -5,6 +5,7 @@
 #include "G4ParticleGun.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4ParticleTable.hh"
+#include "G4ChargedGeantino.hh"
 #include "G4Geantino.hh"
 #include "G4IonTable.hh"
 

@@ -1,5 +1,6 @@
-/run/numberOfThreads 8
+/run/numberOfThreads 16
 /run/initialize
-/gun/momentumAmp 10 GeV
-/run/beamOn 1000000
+/gun/particle mu-
+/gun/energy 1 GeV
+/run/beamOn 10000
 

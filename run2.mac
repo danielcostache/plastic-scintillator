@@ -1,0 +1,15 @@
+/run/initialize
+/control/verbose 2
+/run/verbose 1
+
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+
+/gun/particle ion
+/gun/ion 38 90
+
+/tracking/verbose 2
+/run/beamOn 1
+/tracking/verbose 0
+
+/run/printProgress 1000
+/run/beamOn 10000

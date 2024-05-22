@@ -31,15 +31,18 @@ class myDetectorConstruction : public G4VUserDetectorConstruction {
         G4double xWorld, yWorld, zWorld;
         
         G4Tubs *solidScintillator;
-        G4Box *solidWorld, *solidDetector;
-        G4LogicalVolume *logicWorld, *logicScintillator;
-        G4VPhysicalVolume *physWorld, *physScintillator;
+        G4Box *solidWorld, *solidAtmosphere;
+        G4LogicalVolume *logicWorld, *logicScintillator, *logicAtmosphere[10];
+        G4VPhysicalVolume *physWorld, *physScintillator, *physAtmosphere[10];
 
-        G4Material *worldMat, *pilotU, *Al;
-        G4Element *C, *H;
+        G4Material *worldMat, *pilotU, *Al, *Air[10];
+        G4Element *C, *H, *N, *O;
 
         void DefineMaterial();
         void ConstructScintillator();
+        void ConstructAtmosphere();
+
+        G4bool isScintillator, isAtmosphere;
 };
 
 #endif
