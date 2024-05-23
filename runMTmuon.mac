@@ -1,5 +1,8 @@
 /run/numberOfThreads 16
 /run/initialize
+
+/process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
+
 /gun/particle mu-
 /gun/energy 1 GeV
 /run/beamOn 10000
