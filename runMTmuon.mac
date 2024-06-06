@@ -3,5 +3,5 @@
 
 /process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
 
-/run/beamOn 100
+/run/beamOn 1000000
 

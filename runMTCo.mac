@@ -4,6 +4,6 @@
 /process/had/rdm/thresholdForVeryLongDecayTime 1.0e+60 year
 
 /gun/particle ion
-/gun/ion 38 90 0
+/gun/ion 27 60 0
 /run/beamOn 1000000
 

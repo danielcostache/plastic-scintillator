@@ -60,7 +60,7 @@ void myDetectorConstruction::DefineMaterial() {
 void myDetectorConstruction::ConstructScintillator() {
     // Defining the Scintillator
 
-    G4double radDet=7.5*cm, widthDet=2.*mm, widthCase=0.1*mm, zDet=7*cm;
+    G4double radDet=7.5*cm, widthDet=10.*mm, widthCase=0.5*mm, zDet=7*cm;
 
     solidScintillator = new G4Tubs("solidScintillator", 0.*cm, radDet, widthDet, 0.*deg, 360.*deg);
     logicScintillator = new G4LogicalVolume(solidScintillator, BC408, "logicalScintillator");
@@ -69,12 +69,12 @@ void myDetectorConstruction::ConstructScintillator() {
     auto                *solidCase1 = new G4Tubs("solidCase1", radDet, radDet+1*mm, widthDet, 0*deg, 360*deg);
     G4LogicalVolume     *logicCase1 = new G4LogicalVolume(solidCase1, worldMat, "logicCase1");
     G4VPhysicalVolume   *physCase1  = new G4PVPlacement(0, G4ThreeVector(0., 0., zDet), logicCase1, "physCase1", logicWorld, false, 0, true);
-    auto                *solidCase2 = new G4Tubs("solidCase2", 0.*cm, radDet+1*mm, 1*mm, 0*deg, 360*deg);
-    G4LogicalVolume     *logicCase2 = new G4LogicalVolume(solidCase2, Al, "logicCase2");
-    G4VPhysicalVolume   *physCase2  = new G4PVPlacement(0, G4ThreeVector(0., 0., zDet-widthDet/2-1/2*mm), logicCase2, "physCase2", logicWorld, false, 0, true);
+    auto                *solidCase2 = new G4Tubs("solidCase2", 0.*cm, radDet+1*mm, widthCase, 0*deg, 360*deg);
+    G4LogicalVolume     *logicCase2 = new G4LogicalVolume(solidCase2, worldMat, "logicCase2");
+    G4VPhysicalVolume   *physCase2  = new G4PVPlacement(0, G4ThreeVector(0., 0., zDet-widthDet-widthCase), logicCase2, "physCase2", logicWorld, false, 0, true);
     auto                *solidCase3 = new G4Tubs("solidCase3", 0.*cm, radDet+1*mm, widthCase, 0*deg, 360*deg);
     G4LogicalVolume     *logicCase3 = new G4LogicalVolume(solidCase3, worldMat, "logicCase3");
-    G4VPhysicalVolume   *physCase3  = new G4PVPlacement(0, G4ThreeVector(0., 0., zDet+widthDet/2+widthCase/2), logicCase3, "physCase3", logicWorld, false, 0, true);
+    G4VPhysicalVolume   *physCase3  = new G4PVPlacement(0, G4ThreeVector(0., 0., zDet+widthDet+widthCase), logicCase3, "physCase3", logicWorld, false, 0, true);
 
 
     fScoringVolume = logicScintillator;

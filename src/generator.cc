@@ -5,7 +5,7 @@ myPrimaryGenerator::myPrimaryGenerator() {
     
 
     G4ParticleTable *pTable = G4ParticleTable::GetParticleTable();
-    G4String pName = "geantino";
+    G4String pName = "mu-";
     G4ParticleDefinition *particle = pTable->FindParticle(pName);
 
     double r, theta;
@@ -19,7 +19,7 @@ myPrimaryGenerator::myPrimaryGenerator() {
 
     fParticleGun->SetParticlePosition(pos);
     fParticleGun->SetParticleMomentumDirection(mom);
-    fParticleGun->SetParticleMomentum(0.*GeV);
+    fParticleGun->SetParticleMomentum(1.*GeV);
     fParticleGun->SetParticleDefinition(particle);
 
 }
